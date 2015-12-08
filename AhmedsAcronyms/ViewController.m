@@ -127,7 +127,7 @@
     
     UIAlertController* actionSheetController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    void (^sortActionHandler)(UIAlertAction* action) = ^(UIAlertAction * _Nonnull action)
+    void (^sortActionHandler)(UIAlertAction* action) = ^(UIAlertAction * action)
     {
         if (action.style == UIAlertActionStyleCancel) return;
         
