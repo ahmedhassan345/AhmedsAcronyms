@@ -30,7 +30,7 @@
 {
     if (!acr)
     {
-        responseHandler(nil,@"Acronym is required.");
+        responseHandler(nil,NSLocalizedString(@"Acronym is required.", @""));
         return;
     }
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

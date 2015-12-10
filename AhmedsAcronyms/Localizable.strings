@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  AhmedsAcronyms
+
+  Created by Ahmed H on 12/10/15.
+  Copyright © 2015 Ahmed H. All rights reserved.
+*/
+
+/* Error Messages */
+"No long forms found for this acronym." = "No long forms found for this acronym.";
+"Acronym is required." = "Acronym is required.";
+
+/* Button Titles */
+"Alphabetically" = "Alphabetically";
+"by Popularity" = "by Popularity";
+"by Date" = "by Date";
+"Cancel" = "Cancel";
+"Sort" = "Sort";

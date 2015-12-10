@@ -29,6 +29,7 @@
 		ECA1AAD21C169DAB000689B0 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA1AAC91C169DAB000689B0 /* AFURLSessionManager.m */; settings = {ASSET_TAGS = (); }; };
 		ECA1AAD61C169DAB000689B0 /* AcromineAPIWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA1AAD51C169DAB000689B0 /* AcromineAPIWorker.m */; settings = {ASSET_TAGS = (); }; };
 		ECA1AADA1C16DFE4000689B0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA1AAD91C16DFE4000689B0 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		ECDE26BD1C1A3FD500EBD36D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECDE26BC1C1A3FD500EBD36D /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		ECA1AAD51C169DAB000689B0 /* AcromineAPIWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcromineAPIWorker.m; sourceTree = "<group>"; };
 		ECA1AAD81C16DFE4000689B0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ECA1AAD91C16DFE4000689B0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		ECDE26BC1C1A3FD500EBD36D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				ECA1AAAD1C1691A5000689B0 /* Model Objects */,
 				ECA1AA7A1C167694000689B0 /* AppDelegate.h */,
 				ECA1AA7B1C167694000689B0 /* AppDelegate.m */,
+				ECDE26BC1C1A3FD500EBD36D /* Localizable.strings */,
 				ECA1AA831C167694000689B0 /* Assets.xcassets */,
 				ECA1AA851C167694000689B0 /* LaunchScreen.storyboard */,
 				ECA1AA881C167694000689B0 /* Info.plist */,
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECA1AA871C167694000689B0 /* LaunchScreen.storyboard in Resources */,
+				ECDE26BD1C1A3FD500EBD36D /* Localizable.strings in Resources */,
 				ECA1AA841C167694000689B0 /* Assets.xcassets in Resources */,
 				ECA1AA821C167694000689B0 /* Main.storyboard in Resources */,
 			);
@@ -634,6 +638,7 @@
 				ECA1AAA31C167694000689B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECA1AAA41C167694000689B0 /* Build configuration list for PBXNativeTarget "AhmedsAcronymsTests" */ = {
 			isa = XCConfigurationList;
@@ -642,6 +647,7 @@
 				ECA1AAA61C167694000689B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECA1AAA71C167694000689B0 /* Build configuration list for PBXNativeTarget "AhmedsAcronymsUITests" */ = {
 			isa = XCConfigurationList;
@@ -650,6 +656,7 @@
 				ECA1AAA91C167694000689B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

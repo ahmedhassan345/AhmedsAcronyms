@@ -14,6 +14,7 @@
 
 @interface ViewController ()
 - (IBAction)sortBtnAction:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UITableView *theTableView;
 
 @end
 
@@ -34,10 +35,29 @@
 
 #pragma mark Search Bar Delegate
 
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+    return YES;
+}
+
+-(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+    return YES;
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     acronyms = nil;
-    [self.tableView reloadData];
+    [self.theTableView reloadData];
+    [searchBar resignFirstResponder];
+    
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
     hud.removeFromSuperViewOnHide = YES;
     hud.dimBackground = YES;
@@ -48,14 +68,14 @@
             if ([retrievedAcronyms count])
             {
                 acronyms = retrievedAcronyms;
-                [self.tableView reloadData];
+                [self.theTableView reloadData];
                 
                 [hud hide:YES];
             }
             else
             {
                 hud.mode = MBProgressHUDModeText;
-                hud.labelText = @"No long forms found for this acronym.";
+                hud.labelText = NSLocalizedString(@"No long forms found for this acronym.", @"");
                 hud.margin = 10.f;
                 
                 [hud hide:YES afterDelay:3];
@@ -133,15 +153,15 @@
         
         NSArray* theSortDescriptors;
         
-        if ([action.title isEqualToString:@"Alphabetically"])
+        if ([action.title isEqualToString:NSLocalizedString(@"Alphabetically", @"")])
         {
             theSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)]];
         }
-        else if ([action.title isEqualToString:@"by Popularity"])
+        else if ([action.title isEqualToString:NSLocalizedString(@"by Popularity", @"")])
         {
             theSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"usageFreq" ascending:NO]];
         }
-        else if ([action.title isEqualToString:@"by Date"])
+        else if ([action.title isEqualToString:NSLocalizedString(@"by Date", @"")])
         {
             theSortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"usedSince" ascending:YES]];
         }
@@ -151,12 +171,12 @@
             anAcronym.longForms = [anAcronym.longForms sortedArrayUsingDescriptors:theSortDescriptors];
         }
         
-        [self.tableView reloadData];
+        [self.theTableView reloadData];
     };
-    [actionSheetController addAction:[UIAlertAction actionWithTitle:@"Alphabetically" style:UIAlertActionStyleDefault handler:sortActionHandler]];
-    [actionSheetController addAction:[UIAlertAction actionWithTitle:@"by Popularity" style:UIAlertActionStyleDefault handler:sortActionHandler]];
-    [actionSheetController addAction:[UIAlertAction actionWithTitle:@"by Date" style:UIAlertActionStyleDefault handler:sortActionHandler]];
-    [actionSheetController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:sortActionHandler]];
+    [actionSheetController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Alphabetically", @"") style:UIAlertActionStyleDefault handler:sortActionHandler]];
+    [actionSheetController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"by Popularity", @"") style:UIAlertActionStyleDefault handler:sortActionHandler]];
+    [actionSheetController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"by Date", @"") style:UIAlertActionStyleDefault handler:sortActionHandler]];
+    [actionSheetController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"") style:UIAlertActionStyleCancel handler:sortActionHandler]];
     
     [actionSheetController setModalPresentationStyle:UIModalPresentationPopover];
     UIPopoverPresentationController *popPresenter = [actionSheetController
